@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+  <head><title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <script>
+      function userlogin(){
+      let uname=document.getElementById("n").value.toLowerCase();
+      let uspass=document.getElementById("p").value;
+      let userId = localStorage.getItem('EmailId');
+      //alert(userName);
+      let userPass = localStorage.getItem("Password");
+      let userFirstName = localStorage.getItem("firstname");
+      let userLastName = localStorage.getItem("lastname");
+      console.log(userFirstName);
+      console.log(userLastName);
+     if(uname!==userId||uname==""){
+        n.style.borderColor="red";
+       console.log(n);
+        alert("Enter Correct User Address");
+        return;
+     }
+     else{
+              n.style.borderColor="green";
+     }
+      if(uspass!==userPass||uspass==""){
+        p.style.borderColor="red";
+        alert("Enter Correct Password");
+        return;
+      }
+              p.style.borderColor="green";
+              alert("Login Successful");
+              document.getElementById("container").innerHTML=`<h1><b><i><center>WELCOME ${userFirstName.toUpperCase()} ${userLastName.toUpperCase()}</center></i></b></h1><br><center><img src="fly.png" height="300px" width="300px"></center>`;
+      }
+      </script>
+      <center>
+      <div id="container">
+      <form>
+          <h1>Login Information</h1>
+          <label> Enter User Id:</label>
+          <input type="text" id="n" placeholder="Email Id"></br>
+          <label>Enter Password:</label>
+          <input type="Password" id="p" placeholder="Password"></br>
+          <input type="button" id="login" value="Login" onClick="userlogin()">
+          <input type="button" id="ca" value="New Account" onClick="window.location.href='login.html'">
+          </form>
+        </center>
+      </div>
+  </body>
+</html>
